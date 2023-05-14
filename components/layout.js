@@ -18,7 +18,11 @@ const Layout = ({ children }) => {
     if (minute < 10)
       minute = "0" + minute
 
-    setTime(`${new Date().getHours()}:${minute}`)
+    let hour = new Date().getHours()
+    if (hour < 10)
+      hour = "0" + hour
+
+    setTime(`${hour}:${minute}`)
 
   }
   setInterval(changeTime, 1000)
