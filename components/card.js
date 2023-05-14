@@ -33,8 +33,8 @@ const Card = ({data}) => {
             {listDelete && <ListDelete />}
             {list && <TaskInput />}
           </div>
-          <div className=' flex justify-between items-center px-4 mt-12 border-t border-slate-400 py-4'>
-            <input className={`text-slate-300 px-4 py-2 bg-transparent`} placeholder={'Enter task'} type="number" />
+          <div className=' flex gap-8 justify-between items-center px-4 mt-12 border-t border-slate-400 py-4'>
+            <input className={`text-slate-300 text-lg border-t-0 border-l-0 border-r-0 w-full px-4 py-2 bg-transparent`} placeholder={'Add new Project'} type="text" />
             <MdSend size={24} className=' cursor-pointer font-bold text-lg text-teal-400' />
           </div>
         </div>}
