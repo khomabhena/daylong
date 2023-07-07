@@ -4,7 +4,7 @@ import cors from 'cors'
 import connectDB from './mongodb/connect.js'
 import routerMain from './routes/main.route.js'
 import routerSub from './routes/sub.route.js'
-import routerJob from './routes/job.route.js'
+import routerType from './routes/type.route.js'
 import routerTask from './routes/task.route.js'
 import routerUser from './routes/user.route.js'
 dotenv.config()
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/v1/main', routerMain)
 app.use('/api/v1/sub', routerSub)
-app.use('/api/v1/job', routerJob)
+app.use('/api/v1/type', routerType)
 app.use('/api/v1/task', routerTask)
 app.use('/api/v1/user', routerUser)
 

@@ -21,9 +21,9 @@ const TaskSchema = new Schema({
         ref: 'Sub',
         required: true
     },
-    job: {
+    type: {
         type: Schema.Types.ObjectId,
-        ref: 'Job',
+        ref: 'Type',
         required: true
     }
 })

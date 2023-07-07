@@ -10,9 +10,9 @@ const SubSchema = new Schema({
         type: String,
         required: true
     },
-    job: {
+    type: {
         type: Schema.Types.ObjectId,
-        ref: "Job"
+        ref: "Type"
     },
     main: {
         type: Schema.Types.ObjectId,

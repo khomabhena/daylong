@@ -1,12 +1,16 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
-const JobSchema = new Schema({
+const TypeSchema = new Schema({
     name: {
         type: String,
         required: true
     },
     email: {
+        type: String,
+        required: true
+    },
+    time: {
         type: String,
         required: true
     }
@@ -15,6 +19,6 @@ const JobSchema = new Schema({
 // TypeSchema.virtual("url").get(function () {
 //     return `/api/type/${this._id}`
 // })
-const jobModel = mongoose.model("Job", JobSchema)
+const typeModel = mongoose.model("Type", TypeSchema)
 
-export default jobModel
+export default typeModel
