@@ -1,5 +1,5 @@
-const url = 'http://localhost:8080'
-// const url = 'https://imali-app-server.onrender.com'
+// const url = 'http://localhost:8080'
+const url = 'https://daylong-app-server.onrender.com'
 
 export const postMyData = async (route, formData) => {
     const response = await fetch(`${url}${route}`, {
