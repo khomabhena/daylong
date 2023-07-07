@@ -26,9 +26,9 @@ const TaskCheckbox = ({ started, finished }) => {
     //     <input onChange={handleCheck} ref={refCheckbox} checked={checked} className=' rounded-full h-5 w-5 checked:bg-emerald-400' type='checkbox' />
     //     <p className=' text-slate-300'>Design MongoDB Database</p>
     // </div>
-    <div className=' flex justify-between'>
-        <label>Started: <input ref={refStarted} checked={started} onClick={handleStarted} onChange={handleStarted} className='rounded-full h-5 w-5 checked:bg-emerald-400' type='checkbox' /></label>
-        <label>Finished: <input ref={refFinished} checked={finished} onClick={handleFinished} onChange={handleFinished} className='rounded-full h-5 w-5 checked:bg-emerald-400' type='checkbox' /></label>
+    <div className=' flex text-sm justify-between'>
+        <label>Started: <input ref={refStarted} checked={started} onClick={handleStarted} onChange={handleStarted} className='rounded-full h-4 w-4 checked:bg-emerald-400' type='checkbox' /></label>
+        <label>Finished: <input ref={refFinished} checked={finished} onClick={handleFinished} onChange={handleFinished} className='rounded-full h-4 w-4 checked:bg-emerald-400' type='checkbox' /></label>
     </div>
   )
 }

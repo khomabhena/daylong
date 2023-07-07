@@ -44,11 +44,11 @@ const Sub = ({handleTask, handleMain, main, type, email }) => {
         <div className=' h-80 overflow-auto mb-4'>
             <h1 className=' text-lg text-slate-400 mt-4 font-light'>Sub Projects</h1>
             <div className=' mt-4'>
-                <h2 onClick={handleMain} className=' cursor-pointer text-lg text-slate-300 font-semibold'>{mainData.name}</h2>
+                <h2 onClick={handleMain} className=' cursor-pointer text-base text-slate-300 font-semibold'>{mainData.name}</h2>
                 <ol className=' list-decimal list-inside mt-2 text-slate-400'>
                     {
                         data?.map(({name, _id}) => (
-                            <li key={_id} onClick={() => handleTask(_id)} className=' cursor-pointer'>{name}</li>
+                            <li key={_id} onClick={() => handleTask(_id)} className=' text-base ml-4 cursor-pointer'>{name}</li>
                         ))
                     }
                     {/* <li onClick={handleTask} className=' cursor-pointer'>Sub Project 2</li> */}
@@ -58,7 +58,7 @@ const Sub = ({handleTask, handleMain, main, type, email }) => {
         </div>
 
         <form onSubmit={handleCreateSub} className=' flex flex-col'>
-            <input ref={refName} onChange={(e) => setName(e.target.value)} type="text" placeholder='create sub project' className=' border border-emerald-600 bg-slate-950/50 rounded-md shadow-md shadow-emerald-600 text-slate-300' />
+            <input ref={refName} onChange={(e) => setName(e.target.value)} type="text" placeholder='create sub project' className=' border border-emerald-600 bg-slate-950/50 rounded-md shadow-sm shadow-emerald-600 text-slate-300' />
             <button type="submit" className=' bg-slate-950/80 mt-4 py-2 rounded-md'>Create Sub Project</button>
         </form>
     </div>

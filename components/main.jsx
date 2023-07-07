@@ -35,11 +35,11 @@ const Main = ({ handleSub, type, email }) => {
             {
                 main?.map(({name, _id, allSub}) => (
                     <div key={_id} onClick={() => handleSub(_id)} className=' mt-4 cursor-pointer'>
-                        <h2 className=' text-lg text-slate-300 '>{name}</h2>
+                        <h2 className=' text-base text-slate-300 '>{name}</h2>
                         <ol className=' list-decimal list-inside mt-2 text-slate-400'>
                             {
-                                allSub?.map(({_id}) => (
-                                    <li key={_id}>Sub Project 1</li>
+                                allSub?.map(({_id, name}) => (
+                                    <li className='  ml-4 text-sm' key={_id}>{name}</li>
                                 ))
                             }
                             {/* <li>Sub Project 2</li> */}
@@ -51,7 +51,7 @@ const Main = ({ handleSub, type, email }) => {
         </div>
 
         <form onSubmit={handleCreateMain} className=' flex flex-col'>
-            <input ref={refName} onChange={(e) => setName(e.target.value)} type="text" placeholder='create main project' className=' border border-emerald-600 bg-slate-950/50 rounded-md shadow-md shadow-emerald-600 text-slate-300' />
+            <input ref={refName} onChange={(e) => setName(e.target.value)} type="text" placeholder='create main project' className=' border border-emerald-600 bg-slate-950/50 rounded-md shadow-sm shadow-emerald-600 text-slate-300' />
             <button type="submit" className=' bg-slate-950/80 mt-4 py-2 rounded-md'>Create Main Project</button>
         </form>
     </div>
