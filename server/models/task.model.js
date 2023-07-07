@@ -11,9 +11,17 @@ const TaskSchema = new Schema({
         required: true,
     },
     started: {
-        type: Date 
+        type: Boolean,
+        default: false
+    },
+    startDate: {
+        type: Date
     },
     finished: {
+        type: Boolean,
+        default: false
+    },
+    finishDate: {
         type: Date
     },
     sub: {

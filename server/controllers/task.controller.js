@@ -3,14 +3,14 @@ import taskModel from '../models/task.model.js'
 
 export const createTask = async (req, res) => {
     try {
-        const { name, email, sub, job } = req.body
+        const { name, email, sub, type } = req.body
 
-        const prevSub = await subModel.findOne({ email: email, _id: sub})
+        const prevSub = await subModel.findById(sub)
         const newTask = await taskModel.create({
             name,
             email,
             sub,
-            job
+            type
         })
         const id = await newTask._id
         prevSub.allTasks.push(id)
@@ -26,12 +26,12 @@ export const getTask = async (req, res) => {}
 
 export const getAllTasks = async (req, res) => {
     try {
-        const { job, sub, email } = req.query
+        const { type, sub, email } = req.query
 
         const allTask = await taskModel.find({
-            job: job,
-            sub: sub,
-            email: email
+            type,
+            sub,
+            email
         })
 
         res.status(200).json(allTask)

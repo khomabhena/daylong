@@ -17,9 +17,9 @@ export const createMain = async (req, res) => {
 
 export const getMain = async (req, res) => {
     try {
-        const id = req.query.id
+        const { id } = req.params
     
-        const project = await mainModel.findById(id).exec()
+        const project = await mainModel.findById(id)
     
         res.status(200).json(project)
     } catch (error) {
@@ -28,15 +28,14 @@ export const getMain = async (req, res) => {
 }
 
 export const getAllMain = async (req, res) => {
-    const { job, main, email } = req.query
+    const { type, email } = req.query
     try {
         const projects = await mainModel.find({ email: email })
             .sort({dateCreated: -1})
             .populate({
                 path: 'allSub',
                 match: {
-                    main: main,
-                    job: job 
+                    type: type 
                 }
             })
 

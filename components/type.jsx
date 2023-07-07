@@ -6,6 +6,8 @@ import Task from './task'
 
 const Type = ({ name, type, time, email }) => {
   const [main, setMain] = useState(true)
+  const [mainID, setMainID] = useState('')
+  const [subID, setSubID] = useState('')
   const [sub, setSub] = useState(false)
   const [task, setTask] = useState(false)
 
@@ -15,16 +17,26 @@ const Type = ({ name, type, time, email }) => {
     setTask(false)
   }
 
-  const handleSub = () => {
+  const handleSub = (id = '') => {
     setSub(true)
     setTask(false)
     setMain(false)
+
+    if (id !== '') {
+      console.log(id)
+      setMainID(id)
+    }
   }
 
-  const handleTask = () => {
+  const handleTask = (id = '') => {
     setTask(true)
     setSub(false)
     setMain(false)
+
+    if (id !== '') {
+      console.log(id);
+      setSubID(id)
+    }
   }
 
   return (
@@ -35,8 +47,8 @@ const Type = ({ name, type, time, email }) => {
         </div>
 
         {main && <Main handleSub={handleSub} type={type} email={email} />}
-        {sub && <Sub handleMain={handleMain} handleTask={handleTask} />}
-        {task && <Task handleSub={handleSub} handleMain={handleMain} />}
+        {sub && <Sub handleMain={handleMain} type={type} email={email} main={mainID} handleTask={handleTask} />}
+        {task && <Task handleSub={handleSub} type={type} email={email} sub={subID} main={mainID} handleMain={handleMain} />}
     
     </div>
   )

@@ -3,12 +3,12 @@ import subModel from '../models/sub.model.js'
 
 export const createSub = async (req, res) => {
     try {
-        const { name, email, job, main } = req.body
-        const newMain = await mainModel.findOne({ email: email, _id: main})
+        const { name, email, type, main } = req.body
+        const newMain = await mainModel.findById(main)
         const newSub = await subModel.create({
             name,
             email,
-            job,
+            type,
             main
         })
 
@@ -22,14 +22,23 @@ export const createSub = async (req, res) => {
     }
 }
 
-export const getSub = async (req, res) => {}
+export const getSub = async (req, res) => {
+    try {
+        const { id } = req.params
+        const data = await subModel.findById(id)
+        
+        res.status(200).json(data)
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+}
 
 export const getAllSub = async (req, res) => {
     try {
-        const {job, main, email } = req.query
+        const {type, main, email } = req.query
         
         const allSub = await subModel.find({
-            job: job,
+            type: type,
             main: main,
             email: email
         }).populate('allTasks')
