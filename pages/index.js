@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div className=' mt-8 px-12 w-full grid grid-cols-1 md:grid-cols-2 gap-8'>
+    <div className=' mt-8 px-4 md:px-12 w-full grid grid-cols-1 md:grid-cols-2 gap-8'>
       {
         type?.map(({_id, name, time}) => (
           <Type key={_id} type={_id} name={name} time={time} email={email} />
