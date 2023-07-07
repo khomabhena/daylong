@@ -47,12 +47,10 @@ const Sub = ({handleTask, handleMain, main, type, email }) => {
                 <h2 onClick={handleMain} className=' cursor-pointer text-base text-slate-300 font-semibold'>{mainData.name}</h2>
                 <ol className=' list-decimal list-inside mt-2 text-slate-400'>
                     {
-                        data?.map(({name, _id}) => (
+                        data.length >= 1 && data?.map(({name, _id}) => (
                             <li key={_id} onClick={() => handleTask(_id)} className=' text-base ml-4 cursor-pointer'>{name}</li>
-                        ))
+                        )) || <span className=' ml-4 text-sm text-slate-500'>no sub projects found</span>
                     }
-                    {/* <li onClick={handleTask} className=' cursor-pointer'>Sub Project 2</li> */}
-                    {/* <li onClick={handleTask} className=' cursor-pointer'>Sub Project 3</li> */}
                 </ol>
             </div>
         </div>

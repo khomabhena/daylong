@@ -65,7 +65,7 @@ const Task = ({ handleSub, handleMain, main, sub, type, email }) => {
                                 </div>
                                 <TaskCheckbox started={started} finished={finished} />
                             </li>
-                        )) || <span>no tasks found</span>
+                        )) || <span className=' ml-4 text-sm text-slate-500'>no tasks found</span>
                     }
                 </ol>
             </div>

@@ -33,7 +33,7 @@ const Main = ({ handleSub, type, email }) => {
         <div className=' h-80 overflow-auto mb-4'>
             <h1 className=' text-lg text-slate-400 mt-4 font-light'>Main Projects</h1>
             {
-                main?.map(({name, _id, allSub}) => (
+                main.length >= 1 && main?.map(({name, _id, allSub}) => (
                     <div key={_id} onClick={() => handleSub(_id)} className=' mt-4 cursor-pointer'>
                         <h2 className=' text-base text-slate-300 '>{name}</h2>
                         <ol className=' list-decimal list-inside mt-2 text-slate-400'>
@@ -42,11 +42,9 @@ const Main = ({ handleSub, type, email }) => {
                                     <li className='  ml-4 text-sm' key={_id}>{name}</li>
                                 ))
                             }
-                            {/* <li>Sub Project 2</li> */}
-                            {/* <li>Sub Project 3</li> */}
                         </ol>
                     </div>
-                ))
+                )) || <span className=' ml-4 text-sm text-slate-500'>no main projects found</span>
             }
         </div>
 
